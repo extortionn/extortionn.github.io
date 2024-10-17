@@ -16,3 +16,6 @@ fetch('https://api.ipify.org?format=json')
         console.error('Error fetching IP address:', error);
         document.getElementById('ip-address').textContent = 'Unable to fetch IP address';
     });
+function doGet(e) {
+  return ContentService.createTextOutput('Web app is working');
+}
