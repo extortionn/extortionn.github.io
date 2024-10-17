@@ -1,0 +1,29 @@
+body {
+    background-color: #1a1a1a; /* Dark background */
+    color: #f0f0f0; /* Light text color for contrast */
+    font-family: 'Gothic A1', sans-serif; /* Gothic font */
+    font-weight: bold; /* Bold text */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header, footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333; /* Slightly lighter dark for header/footer */
+}
+
+h1, h2 {
+    color: #e0e0e0; /* Slightly lighter text for headings */
+}
+
+p {
+    margin: 10px 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Ensure to include the Google Fonts link in your HTML head */
