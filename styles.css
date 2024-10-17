@@ -1,29 +1,33 @@
-body {
-    background-color: #1a1a1a; /* Dark background */
-    color: #f0f0f0; /* Light text color for contrast */
-    font-family: 'Gothic A1', sans-serif; /* Gothic font */
-    font-weight: bold; /* Bold text */
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    line-height: 1.6;
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: bold;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
 header, footer {
     text-align: center;
     padding: 20px;
-    background-color: #333; /* Slightly lighter dark for header/footer */
+    background-color: #333;
 }
 
+main {
+    flex: 1;
+    padding: 20px;
+}
 h1, h2 {
-    color: #e0e0e0; /* Slightly lighter text for headings */
+    color: #e0e0e0;
 }
 
 p {
     margin: 10px 0;
 }
 
-main {
-    padding: 20px;
-}
 
 /* Ensure to include the Google Fonts link in your HTML head */
