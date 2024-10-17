@@ -3,8 +3,8 @@ fetch('https://api.ipify.org?format=json')
     .then(data => {
         document.getElementById('ip-address').textContent = `Your IP: ${data.ip}`;
 
-        // Send the IP address to the Zapier webhook
-        fetch('https://hooks.zapier.com/hooks/catch/14191160/21fguqr/', {
+        // Send the IP address to the Integromat webhook
+        fetch('https://hook.eu2.make.com/hv1joh6an1325u0kzyw7v9p1wm28pgbf', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -13,13 +13,13 @@ fetch('https://api.ipify.org?format=json')
         })
         .then(response => {
             if (response.ok) {
-                console.log('IP address sent to Zapier successfully');
+                console.log('IP address sent to Integromat successfully');
             } else {
-                console.error('Error sending IP address to Zapier:', response.statusText);
+                console.error('Error sending IP address to Integromat:', response.statusText);
             }
         })
         .catch(error => {
-            console.error('Error sending IP address to Zapier:', error);
+            console.error('Error sending IP address to Integromat:', error);
         });
     })
     .catch(error => {
