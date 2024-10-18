@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>WHOIS Lookup Tool</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Login</h1>
+        <h1>WHOIS Lookup Tool</h1>
     </header>
     <main>
-        <input type="text" id="username" placeholder="Enter username">
-        <input type="password" id="password" placeholder="Enter password">
-        <button onclick="login()">Login</button>
-        <p id="login-result"></p>
+        <section>
+            <h2>Enter a Domain Name</h2>
+            <form id="whois-form">
+                <input type="text" id="domain" placeholder="example.com" required>
+                <button type="submit">Lookup</button>
+            </form>
+            <div id="whois-result"></div>
+        </section>
     </main>
     <footer>
         <p>&copy; 2023 extortionn</p>
     </footer>
-    <script src="script.js"></script>
+    <script src="whois-lookup.js"></script>
 </body>
 </html>

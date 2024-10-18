@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>IP Lookup Tool</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Login</h1>
+        <h1>IP Lookup Tool</h1>
     </header>
     <main>
-        <input type="text" id="username" placeholder="Enter username">
-        <input type="password" id="password" placeholder="Enter password">
-        <button onclick="login()">Login</button>
-        <p id="login-result"></p>
+        <input type="text" id="ip-input" placeholder="Enter IP address">
+        <button onclick="lookupIP()">Lookup IP</button>
+        <p id="ip-result"></p>
     </main>
     <footer>
         <p>&copy; 2023 extortionn</p>
