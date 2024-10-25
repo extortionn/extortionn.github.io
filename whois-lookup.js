@@ -4,17 +4,22 @@ document.getElementById('whois-form').addEventListener('submit', function(event)
     const resultDiv = document.getElementById('whois-result');
     resultDiv.textContent = 'Fetching WHOIS data...';
 
-    fetch(`https://api.whoxy.com/?key=036bde20ce5dbf2e566157d9946c3511b&whois=${domain}`)
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                resultDiv.textContent = JSON.stringify(data, null, 2);
-            } else {
-                resultDiv.textContent = 'Error fetching WHOIS data.';
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
+    fetch(`https://api.apilayer.com/whois/query?domain=${domain}`, {
+        method: 'GET',
+        headers: {
+            'apikey': 'RG2DKYp9LAMum4Uwp4MoA4b9M7r7YCE7'
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            resultDiv.textContent = JSON.stringify(data, null, 2);
+        } else {
             resultDiv.textContent = 'Error fetching WHOIS data.';
-        });
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        resultDiv.textContent = 'Error fetching WHOIS data.';
+    });
 });
