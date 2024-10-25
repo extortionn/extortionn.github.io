@@ -3,56 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>extortionn central - Home</title>
+    <title>katn1p - home</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        #loading-spinner {
+        body {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        header, footer {
+            margin: 20px 0;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            color: #ff79c6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ascii-cat {
+            font-family: monospace;
+            color: #ff79c6;
+            animation: bounce 1s infinite alternate;
+            margin: 0 10px;
+            font-size: 1em; 
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        button {
+            background-color: #444;
+            color: #e0e0e0;
+            border: 2px solid #ff79c6;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        button:hover {
+            background-color: #ff79c6;
+            color: #1a1a1a;
+        }
+
+        #loading-overlay {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 8px solid #f3f3f3;
-            border-top: 8px solid #3498db;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        #loading-cat {
+            font-family: monospace;
+            color: white;
+            margin-bottom: 20px;
         }
 
-        #loading-spinner.hidden {
-            display: none;
+        #loading-bar {
+            width: 80%;
+            height: 10px;
+            background-color: #f3f3f3;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        #loading-bar-fill {
+            width: 0;
+            height: 100%;
+            background-color: #ff79c6; 
+            animation: load 1s forwards;
+        }
+
+        @keyframes load {
+            0% { width: 0; }
+            100% { width: 100%; }
+        }
+
+        .centered-cat {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.5em; 
+        }
+
+        .centered-cat pre {
+            margin: -50;
         }
     </style>
     <script>
         window.addEventListener('load', function() {
-            document.getElementById('loading-spinner').classList.add('hidden');
+            setTimeout(() => {
+                const overlay = document.getElementById('loading-overlay');
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                }, 500);
+            }, 3000); 
         });
     </script>
 </head>
 <body>
-    <div id="loading-spinner"></div>
+    <div id="loading-overlay">
+        <pre id="loading-cat">
+  /\_/\  
+ ( o.o ) 
+> ^ <
+        </pre>
+        <div id="loading-bar">
+            <div id="loading-bar-fill"></div>
+        </div>
+    </div>
 
     <header>
-        <h1>welcome to extortionn central!</h1>
+        <h1>
+            <span class="ascii-cat">ᓚᘏᗢ</span>
+            [welcome to katn1p]
+            <span class="ascii-cat">ᓚᘏᗢ</span>
+        </h1>
     </header>
     <main>
         <section>
-            <h2>Tool Menu</h2>
+            <h2>silly little tool menu :O</h2>
             <button onclick="location.href='ip-lookup.html'">IP Lookup Tool</button>
             <button onclick="location.href='dns-lookup.html'">DNS Lookup Tool</button>
             <button onclick="location.href='website-resolver.html'">Website Resolver</button>
             <button onclick="location.href='whois-lookup.html'">WHOIS Lookup Tool</button>
         </section>
+        <section class="centered-cat">
+            <pre>
+                
+            </pre>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2023 extortionn</p>
+        <p>&copy; 2023 katn1p</p>
     </footer>
 </body>
 </html>
