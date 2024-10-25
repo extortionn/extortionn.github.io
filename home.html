@@ -6,15 +6,39 @@
     <title>extortionn central - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script>
-        
-        if (localStorage.getItem('isLoggedIn') !== 'true') {
-            
-            window.location.href = '/index.html';
+    <style>
+        #loading-spinner {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            z-index: 1000;
         }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #loading-spinner.hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        window.addEventListener('load', function() {
+            document.getElementById('loading-spinner').classList.add('hidden');
+        });
     </script>
 </head>
 <body>
+    <div id="loading-spinner"></div>
+
     <header>
         <h1>welcome to extortionn central!</h1>
     </header>

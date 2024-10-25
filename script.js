@@ -13,13 +13,13 @@ async function login() {
     const hashedPassword = await hashPassword(password);
 
     const storedUsername = 'hexx';
-    const storedPasswordHash = 'abc0e2f36d8b6b2ebcaef835b092cd7797bfd1f5defd191b044c2a501f2818db'; // Hash of 'password'
+    const storedPasswordHash = 'abc0e2f36d8b6b2ebcaef835b092cd7797bfd1f5defd191b044c2a501f2818db'; 
 
     if (username === storedUsername && hashedPassword === storedPasswordHash) {
         document.getElementById('login-result').textContent = 'Login successful';
-        // Set login flag in local storage
+        
         localStorage.setItem('isLoggedIn', 'true');
-        // Redirect to home.html
+        
         window.location.href = '/home.html';
     } else {
         document.getElementById('login-result').textContent = 'Invalid credentials';
